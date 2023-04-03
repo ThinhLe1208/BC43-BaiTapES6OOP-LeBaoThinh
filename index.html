@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quản lý nhân viên</title>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Bootstrap 4 -->
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+	<!-- JQuery UI -->
+	<link rel="stylesheet" href="./assets/css/jquery-ui.min.css">
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="./assets/css/modal.css">
+
+	<link rel="stylesheet" href="./assets/css/style4.css">
+
+	<link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<!-- Page Content Holder -->
+		<div id="content">
+
+			<div class="container">
+				<div class="card text-center">
+					<!-- Header -->
+					<div class="card-header myCardHeader">
+						<div class="row">
+							<div class="col-md-6">
+								<h3 class="text-left text-primary font-weight-bold">Danh sách đối tượng</h3>
+							</div>
+							<div class="col-md-6 text-right">
+								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
+									data-target="#myModal">Thêm đối tượng</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Body -->
+					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col">
+								<div class="input-group">
+									<select class="form-control" id="timDoiTuong">
+										<option value="">Chọn đối tượng</option>
+										<option value="student">Sinh viên</option>
+										<option value="employee">Nhân viên</option>
+										<option value="customer">Khách hàng</option>
+									</select>
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="btnTimNV"><i class="fa fa-search"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<table class="table table-bordered table-hover myTable">
+							<thead class="text-primary">
+								<tr>
+									<th class="nowrap">Mã</th>
+									<th>
+										<span class="mr-1">Họ và tên</span>
+										<i class="fa fa-arrow-up" id="SapXepTang" style="cursor: pointer;"></i>
+										<i class="fa fa-arrow-down" id="SapXepGiam" style="cursor: pointer;"></i>
+									</th>
+									<th>Địa chỉ</th>
+									<th>Email</th>
+									<th>Khác</th>
+									<th><em class="fa fa-cog"></em></th>
+								</tr>
+							</thead>
+							<tbody id="tableDanhSach">
+
+							</tbody>
+						</table>
+					</div>
+
+					<!-- Footer -->
+					<div class="card-footer myCardFooter">
+						<nav>
+							<ul class="pagination justify-content-center" id="ulPhanTrang">
+
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- The Modal -->
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<header class="head-form mb-0">
+					<h2 id="header-title">Thêm đối tượng</h2>
+				</header>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fa fa-user"></i></span>
+							</div>
+							<select class="form-control" id="doiTuong">
+								<option value="student">Sinh viên</option>
+								<option value="employee">Nhân viên</option>
+								<option value="customer">Khách hàng</option>
+							</select>
+						</div>
+
+						<span class="sp-thongbao" id="tbChucVu"></span>
+					</div>
+
+					<form role="form" id="mainForm">
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-id-card"></i></span>
+								</div>
+								<input type="text" name="ma" id="ma" class="form-control input-sm" placeholder="Mã">
+							</div>
+
+							<span class="sp-thongbao" id="tbMa"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-address-book"></i></span>
+								</div>
+								<input type="text" name="hoTen" id="hoTen" class="form-control input-sm"
+									placeholder="Họ và tên">
+							</div>
+							<span class="sp-thongbao" id="tbHoTen"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+								</div>
+								<input type="text" name="diaChi" id="diaChi" class="form-control input-sm"
+									placeholder="Địa chỉ">
+							</div>
+							<span class="sp-thongbao" id="tbDiaChi"></span>
+						</div>
+
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-envelope"></i></span>
+								</div>
+								<input type="email" name="email" id="email" class="form-control input-sm"
+									placeholder="Email">
+							</div>
+
+							<span class="sp-thongbao" id="tbEmail"></span>
+						</div>
+
+						<div id="extendForm">
+							<!-- render -->
+						</div>
+
+					</form>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer" id="modal-footer">
+					<button id="btnThemNV" type="button" class="btn btn-success">Thêm đối tượng</button>
+					<button id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
+					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap -->
+	<script src="./app/controller/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="./app/controller/lib/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="./app/controller/lib/popper.min.js"></script>
+	<script type="text/javascript" src="./app/controller/lib/bootstrap.min.js"></script>
+
+	<!-- Date Picker -->
+	<script src="./app/controller/lib/jquery-ui.min.js"></script>
+	<script src="./app/controller/lib/jquery-ui.js"></script>
+	<script src="./app/controller/lib/datepicker.js"></script>
+
+	<!-- Sweetalert -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- Main JS -->
+	<script type="module" src="./app/controller/main.js"></script>
+</body>
+
+</html>
