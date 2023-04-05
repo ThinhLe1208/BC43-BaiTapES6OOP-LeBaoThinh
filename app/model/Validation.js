@@ -14,6 +14,8 @@ export default class Validation {
         this.personList = personList;
     }
 
+    // ============ DOM và xử lý sự kiện ==================
+
     // DOM tới form node tương ứng formSelector
     getFormEle() {
         return document.querySelector(this.formSelector);
@@ -48,8 +50,10 @@ export default class Validation {
         });
     }
 
+    //  =========== Validation ===============
+
     /**
-     * Hàm kiểm tra tính hợp lệ của input dựa theo list
+     * Hàm kiểm tra tính hợp lệ của input dựa theo Set Up List
      * @param {HTMLElement} input input node cần kiểm tra
      * @return {undefined | string} undefined (nếu input hợp lệ) || thông báo lỗi (nếu input không hợp lệ)
      */
@@ -82,7 +86,7 @@ export default class Validation {
     }
 
     /**
-  * Hàm kiểm tra tính hợp lệ của form dựa theo list
+  * Hàm kiểm tra tính hợp lệ của form dựa theo checkInput
   * @return {boolean} true (nếu tất cả input hợp lệ) || false (nếu 1 input không hợp lệ)
   */
     checkForm() {
@@ -189,6 +193,13 @@ export default class Validation {
         if (isDup) {
             return `Vui lòng nhập lại do nội dung này bị trùng lặp`;
         }
+    }
+
+    //  ================ Utilities ===================
+
+    // Cập nhật personList (lỗi không thể tham chiếu ? isDuplicate không nhận được personList mới )
+    updatePersonList(newList) {
+        this.personList = newList;
     }
 
     // Đổi chữ thàng dạng slug

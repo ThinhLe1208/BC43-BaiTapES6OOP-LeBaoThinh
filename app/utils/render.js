@@ -132,6 +132,7 @@ export const renderTable = (list) => {
             <th>${person.email}</th>
             <th>${string}</th>
             <th>
+                <button class="btn btn-primary" onclick="chiTietDoiTuong('${person.ma}')">Chi tiết</button>
                 <button class="btn btn-success" onclick="suaDoiTuong('${person.ma}')">Sửa</button>
                 <button class="btn btn-danger"  onclick="xoaDoiTuong('${person.ma}')">Xóa</button>
             </th>

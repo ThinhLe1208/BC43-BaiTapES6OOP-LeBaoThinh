@@ -16,7 +16,7 @@ export class Student extends Person {
     }
 
     tinhDiemTrungBinh() {
-        const diemTrungBinh = (this.toan + this.ly + this.hoa) / 3;
+        const diemTrungBinh = (+this.toan + +this.ly + +this.hoa) / 3;
         return diemTrungBinh.toFixed(1);
     }
 
@@ -33,7 +33,7 @@ export class Employee extends Person {
     }
 
     tinhLuong() {
-        return this.soNgayLam * this.luongNgay;
+        return +this.soNgayLam * +this.luongNgay;
     }
 
     loaiDoiTuong() {

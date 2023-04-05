@@ -1,4 +1,4 @@
-// Lớp tạo danh sách dữ cho lớp Validation đối chiếu và kiểm tra input
+// Lớp tạo danh sách dữ liệu cho lớp Validation đối chiếu và kiểm tra input
 export default class SetUpList {
     constructor(list = []) {
         this.list = list;
@@ -46,7 +46,7 @@ export default class SetUpList {
 
 /**
  * Cấu trúc:
- * const List > item > rules > rule > name
+ * List > item - rules > rule - name
  */
 
 // Ví dụ danh sách sau khi được tạo
