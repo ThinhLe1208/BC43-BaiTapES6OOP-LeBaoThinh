@@ -7,7 +7,7 @@ export const renderModal = (person = 'student') => {
         case 'student':
             stringHTML = `
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Toán">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-calculator"
                                 aria-hidden="true"></i></span>
@@ -19,7 +19,7 @@ export const renderModal = (person = 'student') => {
             </div>
 
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Lý">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                     </div>
@@ -29,7 +29,7 @@ export const renderModal = (person = 'student') => {
             </div>
 
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Hóa">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-flask" aria-hidden="true"></i></span>
                     </div>
@@ -43,7 +43,7 @@ export const renderModal = (person = 'student') => {
         case 'employee':
             stringHTML = `
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Lương ngày">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
                     </div>
@@ -54,7 +54,7 @@ export const renderModal = (person = 'student') => {
             </div>
 
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Số ngày làm việc">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-calendar"
                                 aria-hidden="true"></i></span>
@@ -69,7 +69,7 @@ export const renderModal = (person = 'student') => {
         case 'customer':
             stringHTML = `
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Tên Công ty">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-building"></i></span>
                     </div>
@@ -81,7 +81,7 @@ export const renderModal = (person = 'student') => {
             </div>
 
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Trị giá hóa đơn">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-money"></i></span>
                     </div>
@@ -93,7 +93,7 @@ export const renderModal = (person = 'student') => {
             </div>
 
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group" data-toggle="tooltip" data-placement="left" title="Đánh giá">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-sticky-note"></i></span>
                     </div>

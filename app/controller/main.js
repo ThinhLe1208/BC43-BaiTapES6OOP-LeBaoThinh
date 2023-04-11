@@ -43,7 +43,7 @@ const val = new Validation(setUpList.list, list.danhSachDoiTuong);
 
 /**
  * Định dạng các yếu tố hiển thị trong Modal
- * @param {number} type 1:thêm nhân viên, 2:sửa nhân viên
+ * @param {number} type 1:thêm đối tượng, 2:sửa đối tượng, 3:chi tiết đối tượng
  * @param {number} person 'student', 'employee', 'customer'
  */
 const xetModal = (modalTitle = 'Thêm đối tượng', type = 1, person = 'student') => {
@@ -52,19 +52,19 @@ const xetModal = (modalTitle = 'Thêm đối tượng', type = 1, person = 'stud
     val.addHandleInput();
 
     switch (type) {
-        case 1: // Thêm nhân viên
+        case 1: // Thêm đối tượng
             document.querySelector('#ma').disabled = false;
             document.querySelector('#btnThemNV').style.display = 'block';
             document.querySelector('#btnCapNhat').style.display = 'none';
             document.querySelector('#doiTuong').closest('.form-group').style.visibility = 'visible';
             break;
-        case 2: // Sửa nhân viên
+        case 2: // Sửa đối tượng
             document.querySelector('#ma').disabled = true;
             document.querySelector('#btnThemNV').style.display = 'none';
             document.querySelector('#btnCapNhat').style.display = 'block';
             document.querySelector('#doiTuong').closest('.form-group').style.visibility = 'hidden';
             break;
-        case 3: // Chi tiết nhân viên
+        case 3: // Chi tiết đối tượng
             document.querySelectorAll('#mainForm input').forEach((input) => {
                 input.disabled = 'true';
             });
@@ -77,7 +77,7 @@ const xetModal = (modalTitle = 'Thêm đối tượng', type = 1, person = 'stud
 
 /**
  * Chuyển form về dạng ban đầu
- * @param {string} loai false: không chuyển đối tượng, 'student' , 'employee' , 'customer' '
+ * @param {boolean | string} loai false: không chuyển đối tượng, 'student' , 'employee' , 'customer' 
  */
 const xoaForm = (loai = 'student') => {
     let inputs = document.querySelectorAll('#mainForm input');
@@ -120,6 +120,7 @@ const taoDoiTuong = () => {
 
     return person;
 };
+
 
 // ========= Init ===========
 
